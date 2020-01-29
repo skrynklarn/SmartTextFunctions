@@ -73,7 +73,7 @@ namespace SmartFunctions
             // Info
             item = new ToolStripMenuItem();
             item.Text = "Info";
-            item.Text = "Version 1.1.0";
+            item.Text = string.Format("Version {0}", Application.ProductVersion);
             //item.Click += new System.EventHandler(Info_Click);
             // item.Image = Resources.Exit;
             menu.Items.Add(item);
@@ -138,11 +138,6 @@ namespace SmartFunctions
         {
             // Quit without further ado.
             Application.Exit();
-        }
-
-        void Info_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Version 1.1.0", "Info");
         }
     }
 }
