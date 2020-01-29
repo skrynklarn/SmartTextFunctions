@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SmartFunctions
@@ -23,7 +20,7 @@ namespace SmartFunctions
             }
             else
             {
-                System.Windows.Forms.MessageBox.Show("Clipboard content was not text!");
+                MessageBox.Show("Clipboard content was not text!", "SmartTextFunction - Error!");
                 return "";
             }
         }
@@ -122,8 +119,7 @@ namespace SmartFunctions
             else
             {
                 message.AppendLine(String.Format("String length is {0} characters.", input.Length));
-                // Count linebreaks and then add 1 form last line.
-                message.AppendLine(String.Format("String has {0} rows.", Regex.Matches(input, "\n").Count + 1));
+                message.AppendLine(String.Format("String has {0} rows.", Regex.Matches(input, "\n").Count + 1)); // Count linebreaks and then add 1 form last line.
                 message.AppendLine(String.Format("String has {0} spaces.", Regex.Matches(input, " ").Count));
                 message.AppendLine(String.Format("String has {0} tabs.", Regex.Matches(input, "\t").Count));
             }

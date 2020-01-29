@@ -12,7 +12,6 @@ namespace SmartFunctions
 {
     static class Program
     {
-
         private static String appGuid = "1efb2863-7c53-4bec-9cdf-a0edccc31150";
 
         /// <summary>
@@ -21,12 +20,11 @@ namespace SmartFunctions
         [STAThread]
         static void Main()
         {
-
             using (Mutex mutex = new Mutex(false, "Global\\" + appGuid))
             {
                 if (!mutex.WaitOne(0, false))
                 {
-                    MessageBox.Show("Instance already running");
+                    MessageBox.Show("Instance already running", "SmartTextFunctions");
                     return;
                 }
 
@@ -35,7 +33,6 @@ namespace SmartFunctions
                 using (Trayicon ti = new Trayicon())
                 {
                     ti.Display();
-
                     // Make sure the application runs!
                     Application.Run();
                 };

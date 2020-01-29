@@ -1,9 +1,4 @@
-﻿using SmartFunctions.Properties;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace SmartFunctions
@@ -19,70 +14,72 @@ namespace SmartFunctions
             // Add the default menu options.
             ContextMenuStrip menu = new ContextMenuStrip();
             ToolStripMenuItem item;
-            ToolStripSeparator sep;
 
-            
-            item = new ToolStripMenuItem();
-            item.Text = "Jira Table (with header)";
+            item = new ToolStripMenuItem
+            {
+                Text = "Jira Table (with header)",
+                ToolTipText = "Adds | to start/end of line and in every tab."
+            };
             item.Click += new EventHandler(JiraTableHeader);
             // item.Image = Resources.Explorer;
-            item.ToolTipText = "Adds | to start/end of line and in every tab.";
             menu.Items.Add(item);
 
-            
-            item = new ToolStripMenuItem();
-            item.Text = "Jira Table";
+            item = new ToolStripMenuItem
+            {
+                Text = "Jira Table",
+                ToolTipText = "Adds | to start/end of line and in every tab."
+            };
             item.Click += new EventHandler(JiraTable);
-            // item.Image = Resources.About;
-            item.ToolTipText = "Adds | to start/end of line and in every tab.";
             menu.Items.Add(item);
 
-            item = new ToolStripMenuItem();
-            item.Text = "CSV (,) int";
+            item = new ToolStripMenuItem
+            {
+                Text = "CSV (,) int",
+                ToolTipText = "Add , in every line break/tab."
+            };
             item.Click += new EventHandler(CSV_Comma);
-            item.ToolTipText = "Add , in every line break/tab.";
-            // item.Image = Resources.About;
             menu.Items.Add(item);
 
-            item = new ToolStripMenuItem();
-            item.Text = "CSV (,) string";
+            item = new ToolStripMenuItem
+            {
+                Text = "CSV (,) string",
+                ToolTipText = "Add , in every line break/tab."
+            };
             item.Click += new EventHandler(CSV_CommaString);
-            item.ToolTipText = "Add , in every line break/tab.";
-            // item.Image = Resources.About;
             menu.Items.Add(item);
 
-            item = new ToolStripMenuItem();
-            item.Text = "CSV (;) int";
+            item = new ToolStripMenuItem
+            {
+                Text = "CSV (;) int",
+                ToolTipText = "Add ; in every line break/tab."
+            };
             item.Click += new EventHandler(CSV_Semicolon);
-            item.ToolTipText = "Add ; in every line break/tab.";
-            // item.Image = Resources.About;
             menu.Items.Add(item);
 
-            // längd på text
-            item = new ToolStripMenuItem();
-            item.Text = "String information";
+            item = new ToolStripMenuItem
+            {
+                Text = "String information",
+                ToolTipText = "Information about the string"
+            };
             item.Click += new EventHandler(StringInformation);
-            item.ToolTipText = "Information about the string";
-            // item.Image = Resources.About;
             menu.Items.Add(item);
 
-            // Separator.
-            sep = new ToolStripSeparator();
-            menu.Items.Add(sep);
+            // Separator
+            menu.Items.Add(new ToolStripSeparator());
 
             // Info
-            item = new ToolStripMenuItem();
-            item.Text = "Info";
-            item.Text = string.Format("Version {0}", Application.ProductVersion);
-            //item.Click += new System.EventHandler(Info_Click);
-            // item.Image = Resources.Exit;
+            item = new ToolStripMenuItem
+            {
+                Text = string.Format("Version {0}", Application.ProductVersion)
+            };
             menu.Items.Add(item);
 
-            // Exit.
-            item = new ToolStripMenuItem();
-            item.Text = "Exit";
+            // Exit
+            item = new ToolStripMenuItem
+            {
+                Text = "Exit"
+            };
             item.Click += new System.EventHandler(Exit_Click);
-            // item.Image = Resources.Exit;
             menu.Items.Add(item);
 
             return menu;
@@ -125,7 +122,6 @@ namespace SmartFunctions
 
         void StringInformation(object sender, EventArgs e)
         {
-
             TextHandler.StringInformation();
         }
 
