@@ -1,14 +1,8 @@
-﻿using SmartFunctions.Properties;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
+﻿using System;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SmartFunctions
+namespace SmartTextFunctions
 {
     static class Program
     {

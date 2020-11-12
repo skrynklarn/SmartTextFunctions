@@ -1,9 +1,8 @@
-﻿using SmartFunctions.Properties;
+﻿using SmartTextFunctions.Properties;
 using System;
-using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace SmartFunctions
+namespace SmartTextFunctions
 {
     class Trayicon : IDisposable
     {
@@ -17,9 +16,8 @@ namespace SmartFunctions
         public void Display()
         {
             // Put the icon in the system tray and allow it react to mouse clicks.			
-            // ni.Icon = Resources.star;
             ni.Icon = Resources.fx;
-            ni.Text = "Smart text functions";
+            ni.Text = "SmartTextFunctions";
             ni.Visible = true;
 
             // Attach a context menu.

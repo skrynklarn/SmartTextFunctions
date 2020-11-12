@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Forms;
 
-namespace SmartFunctions
+namespace SmartTextFunctions
 {
     class TrayContextMenu
     {
@@ -21,7 +22,6 @@ namespace SmartFunctions
                 ToolTipText = "Adds | to start/end of line and in every tab."
             };
             item.Click += new EventHandler(JiraTableHeader);
-            // item.Image = Resources.Explorer;
             menu.Items.Add(item);
 
             item = new ToolStripMenuItem
@@ -58,6 +58,14 @@ namespace SmartFunctions
 
             item = new ToolStripMenuItem
             {
+                Text = "SQL Insert Dataset",
+                ToolTipText = "Format columns and lines in SQL multi insert format"
+            };
+            item.Click += new EventHandler(SQLMultiInsertFormat);
+            menu.Items.Add(item);
+
+            item = new ToolStripMenuItem
+            {
                 Text = "String information",
                 ToolTipText = "Information about the string"
             };
@@ -67,19 +75,20 @@ namespace SmartFunctions
             // Separator
             menu.Items.Add(new ToolStripSeparator());
 
-            // Info
+            // About pop-up
             item = new ToolStripMenuItem
             {
-                Text = string.Format("Version {0}", Application.ProductVersion)
+                Text = string.Format("About")
             };
-            menu.Items.Add(item);
+            item.Click += new EventHandler(About_Click);
+            menu.Items.Add(item);   
 
             // Exit
             item = new ToolStripMenuItem
             {
                 Text = "Exit"
             };
-            item.Click += new System.EventHandler(Exit_Click);
+            item.Click += new EventHandler(Exit_Click);
             menu.Items.Add(item);
 
             return menu;
@@ -105,24 +114,68 @@ namespace SmartFunctions
             TextHandler.JiraTable(false);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void CSV_Comma(object sender, EventArgs e)
         {
             TextHandler.CSV(TextHandler.SEPERATOR_COLON);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void CSV_CommaString(object sender, EventArgs e)
         {
             TextHandler.CSV(TextHandler.SEPERATOR_COLON, true);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void CSV_Semicolon(object sender, EventArgs e)
         {
             TextHandler.CSV(TextHandler.SEPERATOR_SEMICOLON);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void SQLMultiInsertFormat(object sender, EventArgs e)
+        {
+            TextHandler.SQLMultiInsertFormat();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void StringInformation(object sender, EventArgs e)
         {
             TextHandler.StringInformation();
+        }
+
+        /// <summary>
+        /// Show some short about information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void About_Click(object sender, EventArgs e)
+        {
+            StringBuilder message = new StringBuilder();
+
+            message.AppendLine("Homepage: " + "https://github.com/skrynklarn/SmartTextFunctions");
+            message.AppendLine("Version: " + Application.ProductVersion);
+            MessageBox.Show(message.ToString(), "About SmartTextFunctions");
         }
 
         /// <summary>
