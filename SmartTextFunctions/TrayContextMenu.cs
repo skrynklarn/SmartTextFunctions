@@ -18,47 +18,47 @@ namespace SmartTextFunctions
 
             item = new ToolStripMenuItem
             {
-                Text = "Jira Table (with header)",
-                ToolTipText = "Adds | to start/end of line and in every tab."
-            };
+                Text = "Jira table (with header)",
+                ToolTipText = "Tableformated (with header) string for Jira"
+			};
             item.Click += new EventHandler(JiraTableHeader);
             menu.Items.Add(item);
 
             item = new ToolStripMenuItem
             {
-                Text = "Jira Table",
-                ToolTipText = "Adds | to start/end of line and in every tab."
-            };
+                Text = "Jira table (without header)",
+                ToolTipText = "Tableformated (without header) string for Jira"
+			};
             item.Click += new EventHandler(JiraTable);
             menu.Items.Add(item);
 
             item = new ToolStripMenuItem
             {
-                Text = "CSV (,) int",
-                ToolTipText = "Add , in every line break/tab."
-            };
+                Text = "CSV int",
+				ToolTipText = "Example output: 0,1,2"
+			};
             item.Click += new EventHandler(CSV_Comma);
             menu.Items.Add(item);
 
             item = new ToolStripMenuItem
             {
-                Text = "CSV (,) string",
-                ToolTipText = "Add , in every line break/tab."
-            };
+                Text = "CSV string",
+				ToolTipText = "Example output: 'a','b','c'"
+			};
             item.Click += new EventHandler(CSV_CommaString);
             menu.Items.Add(item);
 
             item = new ToolStripMenuItem
             {
-                Text = "CSV (;) int",
-                ToolTipText = "Add ; in every line break/tab."
-            };
+                Text = "Semicolon-seperated int",
+                ToolTipText = "Example output: 0;1;2"
+			};
             item.Click += new EventHandler(CSV_Semicolon);
             menu.Items.Add(item);
 
             item = new ToolStripMenuItem
             {
-                Text = "SQL Insert Dataset",
+                Text = "SQL insert dataset",
                 ToolTipText = "Format columns and lines in SQL multi insert format"
             };
             item.Click += new EventHandler(SQLMultiInsertFormat);

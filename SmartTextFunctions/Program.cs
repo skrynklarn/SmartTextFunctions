@@ -14,11 +14,12 @@ namespace SmartTextFunctions
         [STAThread]
         static void Main()
         {
+			// Check if a instance is already running. Only allow one instance at same time.
             using (Mutex mutex = new Mutex(false, "Global\\" + appGuid))
             {
                 if (!mutex.WaitOne(0, false))
                 {
-                    MessageBox.Show("Instance already running", "SmartTextFunctions");
+                    MessageBox.Show("A instance is already running!", "SmartTextFunctions", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 

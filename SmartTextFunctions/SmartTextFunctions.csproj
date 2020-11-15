@@ -61,7 +61,7 @@
     <OutputPath>bin\x64\Release\</OutputPath>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>60D260AD63F6B29A63BF7F9974F9BA645EE85E76</ManifestCertificateThumbprint>
