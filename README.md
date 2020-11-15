@@ -25,7 +25,7 @@ Output:
 |3| |2020-12-24|
 ```
 
-### Jira table
+### Jira table (without header)
 Same as Jira table (with header) but don't have double pipes || on the first row.
 ```
 Input:
@@ -39,7 +39,7 @@ Output:
 |3| |2020-12-24|
 ```
 
-### CVS (,) int
+### CVS int
 Splits a string on every line break and tab and joins it back togeather with a , between each part.
 
 ```
@@ -51,7 +51,7 @@ Output:
 1,2,3,4,5,6
 ```
 
-### CVS (,) string
+### CVS string
 Splits a string on every line break and tab and joins it back togeather with a , between and adds a ' before and after each part.
 
 ```
@@ -63,7 +63,7 @@ Output:
 'a','b','c','d','e','f'
 ```
 
-### CVS (;) int
+### Semicolon-seperated int
 Splits a string on every line break and tab and joins it back togeather with a ; between each part.
 
 ```
@@ -75,7 +75,7 @@ Output:
 1;2;3;4;5;6
 ```
 
-### SQL Insert Dataset
+### SQL insert dataset
 Creates the "value" string for a SQL insert dataset.
 
 Splits the string on each row and then each tab.
